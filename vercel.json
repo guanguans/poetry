@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "/api/index.php",
+            "use": "vercel-php@0.3.1"
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "Poetry Api",
+        "APP_ENV": "local",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://poetry.vercel.app",
+        "DB_CONNECTION": "sqlite",
+        "LOGGER_LOG_FILE": "/tmp/runtime/logs/app.log",
+        "VIEW_CACHE_DIRECTORY": "/tmp/runtime/views",
+        "NODE_PATH": "node"
+    }
+}
