@@ -12,4 +12,3 @@ vendor/
 tests.php
 .DS_Store
 .history/
-.env
