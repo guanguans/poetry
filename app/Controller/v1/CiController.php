@@ -43,9 +43,7 @@ class CiController extends Controller
      */
     public function show($id)
     {
-        $ci = Ci::query()->select()->first($id);
-
-        return $this->json($ci);
+        return Ci::query()->select()->first($id);
     }
 
     /**
@@ -54,13 +52,9 @@ class CiController extends Controller
     public function rand($limit)
     {
         if (is_null($limit) || 1 == $limit) {
-            $ci = Ci::query()->select()->inRandomOrder()->limit($limit)->first();
-
-            return $this->json($ci);
+            return Ci::query()->select()->inRandomOrder()->limit($limit)->first();
         }
 
-        $ci = Ci::query()->select()->inRandomOrder()->limit($limit)->get();
-
-        return $this->json($ci);
+        return Ci::query()->select()->inRandomOrder()->limit($limit)->get();
     }
 }

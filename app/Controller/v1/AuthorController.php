@@ -42,9 +42,7 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        $author = Author::query()->select()->first($id);
-
-        return $this->json($author);
+        return Author::query()->select()->first($id);
     }
 
     /**
@@ -53,13 +51,9 @@ class AuthorController extends Controller
     public function rand($limit)
     {
         if (is_null($limit) || 1 == $limit) {
-            $ci = Author::query()->select()->inRandomOrder()->limit($limit)->first();
-
-            return $this->json($ci);
+            return Author::query()->select()->inRandomOrder()->limit($limit)->first();
         }
 
-        $ci = Author::query()->select()->inRandomOrder()->limit($limit)->get();
-
-        return $this->json($ci);
+        return Author::query()->select()->inRandomOrder()->limit($limit)->get();
     }
 }
