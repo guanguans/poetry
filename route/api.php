@@ -14,7 +14,7 @@ use App\Controller\v1\AuthorController;
 use App\Controller\v1\CiController;
 use Guanguans\Coole\Facade\Router;
 
-Router::prefix('api/v1')->group(function () {
+Router::prefix('v1')->group(function () {
     // 词
     Router::prefix('ci')->group(function () {
         Router::get('index', [CiController::class, 'index']);
