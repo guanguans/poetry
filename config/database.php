@@ -23,7 +23,7 @@ return [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => cenv('DATABASE_URL'),
-            'database' => cenv('DB_DATABASE', base_path('database/database.sqlite')),
+            'database' => cenv('DB_DATABASE', base_path('database/ci.db')),
             'prefix' => cenv('DATABASE_URL', ''),
             'foreign_key_constraints' => cenv('DB_FOREIGN_KEYS', true),
         ],

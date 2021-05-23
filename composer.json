@@ -29,7 +29,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2",
-        "guanguans/coole": "^1.1"
+        "guanguans/coole": "^1.1",
+        "illuminate/http": "^7.30",
+        "illuminate/validation": "^7.30"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
