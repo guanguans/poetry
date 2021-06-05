@@ -1,10 +1,6 @@
 # poetry
 
 > 基于 Coole 开发部署在 Vercel 上的免费诗词 API 接口。
-## Documentation
-
-[www.guanguans.cn/coole](https://www.guanguans.cn/coole/)
-
 ## 接口列表
 
 接口名称 | 请求方法 | URI | 请求参数 | 示例
@@ -16,23 +12,23 @@
 获取作者详情 | GET | v1/author/show/{value} | value | https://apipoetry.vercel.app/v1/author/show/1
 随机获取作者 | GET | v1/author/rand/{rand} | rand | https://apipoetry.vercel.app/v1/author/rand/10
 
-## Changelog
+## 变更日志
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+请参阅 [CHANGELOG](CHANGELOG.md) 获取最近有关更改的更多信息。
 
-## Contributing
+## 贡献指南
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+请参阅 [CONTRIBUTING](.github/CONTRIBUTING.md) 有关详细信息。
 
-## Security Vulnerabilities
+## 安全漏洞
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+请查看[我们的安全政策](../../security/policy)了解如何报告安全漏洞。
 
-## Credits
+## 贡献者
 
 * [guanguans](https://github.com/guanguans)
-* [All Contributors](../../contributors)
+* [所有贡献者](../../contributors)
 
-## License
+## 协议
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+MIT 许可证（MIT）。有关更多信息，请参见[协议文件](LICENSE)。
