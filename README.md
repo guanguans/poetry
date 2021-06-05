@@ -7,9 +7,17 @@
 
 ## 接口列表
 
+接口名称 | 请求方法 | URI | 请求参数 | 示例
+---|---|---|---|---
+获取词列表 | GET | v1/ci/index | page,per_page | https://apipoetry.vercel.app/v1/ci/index?page=1&per_page=10
+
 ### 获取词列表
 
+#### 地址
+
 [https://apipoetry.vercel.app/v1/ci/index](https://apipoetry.vercel.app/v1/ci/index)
+
+#### 参数
 
 ``` json
 {
