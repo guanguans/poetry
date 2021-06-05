@@ -1,34 +1,11 @@
-<p align="center"><img src="https://github.com/guanguans/coole/blob/main/docs/static/logo.png" width="38%" alt="Coole"></p>
+# poetry
 
-> This is an official framework application template for [Coole](https://github.com/guanguans/coole). - 这是一个官方提供的 [Coole](https://github.com/guanguans/coole) 框架应用模板。
-
-![Tests](https://github.com/coolephp/skeleton/workflows/Tests/badge.svg)
-![Check & fix styling](https://github.com/coolephp/skeleton/workflows/Check%20&%20fix%20styling/badge.svg)
-[![Latest Stable Version](https://poser.pugx.org/coolephp/skeleton/v)](//packagist.org/packages/coolephp/skeleton)
-[![Total Downloads](https://poser.pugx.org/coolephp/skeleton/downloads)](//packagist.org/packages/coolephp/skeleton)
-[![License](https://poser.pugx.org/coolephp/skeleton/license)](//packagist.org/packages/coolephp/skeleton)
-
+> 基于 Coole 开发部署在 Vercel 上的免费诗词 API 接口。
 ## Documentation
 
 [www.guanguans.cn/coole](https://www.guanguans.cn/coole/)
 
-## Requirement
-
-* PHP >= 7.2
-
-## Installation
-
-``` bash
-$ composer create-project coolephp/skeleton -vvv
-```
-
-## Quick start service
-
-``` php
-$ php coole serve
-```
-
-## Api list
+## 接口列表
 
 ### 获取词列表
 
@@ -416,12 +393,6 @@ $ php coole serve
         "content": "墙头花□寒犹噤。\n放绣帘昼静。\n帘外时有蜂儿，趁杨花不定。\n阑干又还独凭。\n念翠低眉晕。\n春梦枉恼人肠，更厌厌酒病。"
     }
 ]
-```
-
-## Testing
-
-``` bash
-$ composer test
 ```
 
 ## Changelog
