@@ -23,8 +23,8 @@
     "env": {
         "APP_NAME": "Poetry Api",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://poetry.vercel.app",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://apipoetry.vercel.app",
         "DB_CONNECTION": "sqlite",
         "LOGGER_LOG_FILE": "/tmp/runtime/logs/app.log",
         "VIEW_CACHE_DIRECTORY": "/tmp/runtime/views",
