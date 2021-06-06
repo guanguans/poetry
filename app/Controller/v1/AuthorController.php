@@ -13,11 +13,10 @@ declare(strict_types=1);
 namespace App\Controller\v1;
 
 use App\Model\Author;
-use Guanguans\Coole\Controller\Controller;
 use Illuminate\Database\Eloquent\Builder;
 use Symfony\Component\HttpFoundation\Request;
 
-class AuthorController extends Controller
+class AuthorController extends BaseController
 {
     /**
      * 列表.
@@ -26,23 +25,37 @@ class AuthorController extends Controller
     {
         $parameters = $request->query->all();
 
-        $ciAuthors = Author::query()
+        $perPage = (int) ($parameters['per_page'] ?? 10);
+        if ($perPage > 50) {
+            return $this->failure('数据不能超过 50 条');
+        }
+
+        $authors = Author::query()
             ->select()
             ->where(function (Builder $query) use ($parameters) {
                 isset($parameters['name']) && $query->where('name', $parameters['name']);
                 isset($parameters['long_desc']) && $query->where('long_desc', 'like', "%{$parameters['long_desc']}%");
             })
-            ->paginate($parameters['per_page'] ?? null, ['*'], 'page', (int) ($parameters['page'] ?? 1));
+            ->simplePaginate($perPage, ['*'], 'page', (int) ($parameters['page'] ?? 1));
 
-        return $this->json($ciAuthors);
+        return $this->success($authors);
     }
 
     /**
      * 详情.
      */
-    public function show($id)
+    public function show($value)
     {
-        return Author::query()->select()->first($id);
+        $author = Author::query()
+            ->select()
+            ->where('value', $value)
+            ->first();
+
+        if (empty($author)) {
+            return $this->failure('数据不存在');
+        }
+
+        return $this->success($author);
     }
 
     /**
@@ -50,10 +63,18 @@ class AuthorController extends Controller
      */
     public function rand($limit)
     {
-        if (is_null($limit) || 1 == $limit) {
-            return Author::query()->select()->inRandomOrder()->limit($limit)->first();
+        if ($limit > 50) {
+            return $this->failure('数据不能超过 50 条');
         }
 
-        return Author::query()->select()->inRandomOrder()->limit($limit)->get();
+        if ($limit <= 1) {
+            $author = Author::query()->select()->inRandomOrder()->limit(1)->first();
+
+            return $this->success($author);
+        }
+
+        $authors = Author::query()->select()->inRandomOrder()->limit((int) $limit)->get();
+
+        return $this->success($authors);
     }
 }

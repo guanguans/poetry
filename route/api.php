@@ -18,14 +18,14 @@ Router::prefix('v1')->group(function () {
     // 词
     Router::prefix('ci')->group(function () {
         Router::get('index', [CiController::class, 'index']);
-        Router::get('show/{id}', [CiController::class, 'show']);
+        Router::get('show/{value}', [CiController::class, 'show']);
         Router::get('rand/{limit?}', [CiController::class, 'rand']);
     });
 
     // 作者
     Router::prefix('author')->group(function () {
         Router::get('index', [AuthorController::class, 'index']);
-        Router::get('show/{id}', [AuthorController::class, 'show']);
-        Router::get('rand/{limit?}', [CiController::class, 'rand']);
+        Router::get('show/{value}', [AuthorController::class, 'show']);
+        Router::get('rand/{limit?}', [AuthorController::class, 'rand']);
     });
 });

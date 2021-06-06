@@ -53,8 +53,8 @@ return [
      */
     'middleware' => [
         // \App\Middleware\ExampleMiddleware::class,
-        \Coole\Cors\Cors::class,
         \Coole\RateLimiter\RateLimiter::class,
+        \Coole\Cors\Cors::class,
     ],
 
     /*
