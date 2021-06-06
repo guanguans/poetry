@@ -5,12 +5,12 @@
 
 接口名称 | 请求方法 | URI | 请求参数 | 示例
 ---|---|---|---|---
-获取词列表 | GET | v1/ci/index | page,per_page | https://apipoetry.vercel.app/v1/ci/index?page=1&per_page=10
+获取词列表 | GET | v1/ci/index | rhythmic,author,content,page,per_page | https://apipoetry.vercel.app/v1/ci/index?rhythmic=点绛唇&author=苏轼&content=雁&page=1&per_page=10
 获取词详情 | GET | v1/ci/show/{value} |  | https://apipoetry.vercel.app/v1/ci/show/1
-随机获取词 | GET | v1/ci/rand/{rand} |  | https://apipoetry.vercel.app/v1/ci/rand/10
-获取作者列表 | GET | v1/author/index | page,per_page | https://apipoetry.vercel.app/v1/author/index?page=1&per_page=10
+随机获取词 | GET | v1/ci/rand/{limit} |  | https://apipoetry.vercel.app/v1/ci/rand/10
+获取作者列表 | GET | v1/author/index | name,long_desc,page,per_page | https://apipoetry.vercel.app/v1/author/index?name=苏轼&long_desc=进士&page=1&per_page=10
 获取作者详情 | GET | v1/author/show/{value} |  | https://apipoetry.vercel.app/v1/author/show/1
-随机获取作者 | GET | v1/author/rand/{rand} |  | https://apipoetry.vercel.app/v1/author/rand/10
+随机获取作者 | GET | v1/author/rand/{limit} |  | https://apipoetry.vercel.app/v1/author/rand/10
 
 ## 变更日志
 
