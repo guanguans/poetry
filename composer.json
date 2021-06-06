@@ -31,9 +31,7 @@
         "php": ">=7.2",
         "coolephp/cors": "^1.0",
         "coolephp/rate-limiter": "^1.0",
-        "guanguans/coole": "^1.1",
-        "illuminate/http": "^7.30",
-        "illuminate/validation": "^7.30"
+        "guanguans/coole": "^1.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
