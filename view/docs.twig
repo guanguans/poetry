@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Coole PHP framework.</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-weight: 100;
+            height: 100vh;
+            margin: 0
+        }
+
+        .full-height {
+            height: 100vh
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center
+        }
+
+        .position-ref {
+            position: relative
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase
+        }
+    </style>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    <div class="top-right links">
+        <a href="/">主页</a>
+        <a href="/docs">文档</a>
+        <a href="https://github.com/guanguans/poetry" target="_blank">GitHub</a>
+    </div>
+    <div class="content container table-responsive">
+        <table class="table table-bordered table-striped col-xs-12 col-sm-12 col-xs-12 col-md-12 col-lg-12">
+            <thead>
+            <tr>
+                <th>接口名称</th>
+                <th>请求方法</th>
+                <th>URI</th>
+                <th>请求参数</th>
+                <th>示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">获取词列表</th>
+                <td>GET</td>
+                <td>v1/ci/index</td>
+                <td>rhythmic,author,content,page,per_page</td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/ci/index?rhythmic=点绛唇&author=苏轼&content=雁&page=1&per_page=10"
+                       target="_blank">
+                        https://apipoetry.vercel.app/v1/ci/index?rhythmic=点绛唇&author=苏轼&content=雁&page=1&per_page=10
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">获取词详情</th>
+                <td>GET</td>
+                <td>v1/ci/show/{value}</td>
+                <td></td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/ci/show/1" target="_blank">
+                        https://apipoetry.vercel.app/v1/ci/show/1
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">随机获取词</th>
+                <td>GET</td>
+                <td>v1/ci/rand/{limit}</td>
+                <td></td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/ci/rand/10" target="_blank">
+                        https://apipoetry.vercel.app/v1/ci/rand/10
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">获取作者列表</th>
+                <td>GET</td>
+                <td>v1/author/index</td>
+                <td>name,long_desc,page,per_page</td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/author/index?name=苏轼&long_desc=进士&page=1&per_page=10"
+                       target="_blank">
+                        https://apipoetry.vercel.app/v1/author/index?name=苏轼&long_desc=进士&page=1&per_page=10
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">获取作者详情</th>
+                <td>GET</td>
+                <td>v1/author/show/{value}</td>
+                <td></td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/author/show/1" target="_blank">
+                        https://apipoetry.vercel.app/v1/author/show/1
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">随机获取作者</th>
+                <td>GET</td>
+                <td>v1/author/rand/{limit}</td>
+                <td></td>
+                <td>
+                    <a href="https://apipoetry.vercel.app/v1/author/rand/10" target="_blank">
+                        https://apipoetry.vercel.app/v1/author/rand/10
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
