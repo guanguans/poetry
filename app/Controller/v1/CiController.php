@@ -23,7 +23,7 @@ class CiController extends BaseController
      */
     public function index(Request $request)
     {
-        $parameters = $request->query->all();
+        $parameters = array_filter($request->query->all());
 
         $perPage = (int) ($parameters['per_page'] ?? 10);
         if ($perPage > 50) {
@@ -33,9 +33,9 @@ class CiController extends BaseController
         $cis = Ci::query()
             ->select()
             ->where(function (Builder $query) use ($parameters) {
-                isset($parameters['rhythmic']) && $query->where('rhythmic', $parameters['rhythmic']);
-                isset($parameters['author']) && $query->where('author', $parameters['author']);
-                isset($parameters['content']) && $query->where('content', 'like', "%{$parameters['content']}%");
+                isset($parameters['rhythmic']) && $parameters['rhythmic'] && $query->where('rhythmic', $parameters['rhythmic']);
+                isset($parameters['author']) && $parameters['author'] && $query->where('author', $parameters['author']);
+                isset($parameters['content']) && $parameters['content'] && $query->where('content', 'like', "%{$parameters['content']}%");
             })
             ->simplePaginate($perPage, ['*'], 'page', (int) ($parameters['page'] ?? 1));
 

@@ -23,7 +23,7 @@ class AuthorController extends BaseController
      */
     public function index(Request $request)
     {
-        $parameters = $request->query->all();
+        $parameters = array_filter($request->query->all());
 
         $perPage = (int) ($parameters['per_page'] ?? 10);
         if ($perPage > 50) {
@@ -33,8 +33,8 @@ class AuthorController extends BaseController
         $authors = Author::query()
             ->select()
             ->where(function (Builder $query) use ($parameters) {
-                isset($parameters['name']) && $query->where('name', $parameters['name']);
-                isset($parameters['long_desc']) && $query->where('long_desc', 'like', "%{$parameters['long_desc']}%");
+                isset($parameters['name']) && $parameters['name'] && $query->where('name', $parameters['name']);
+                isset($parameters['long_desc']) && $parameters['long_desc'] && $query->where('long_desc', 'like', "%{$parameters['long_desc']}%");
             })
             ->simplePaginate($perPage, ['*'], 'page', (int) ($parameters['page'] ?? 1));
 
